@@ -9,7 +9,8 @@ python:
  - "3.6-dev"
  - "3.7-dev"
  - "nightly"
-install: "pip install -r requirements.txt"
+install: 
+ - pip install -r requirements.txt
  - docker build -t pandapanda .
  - docker run -d -p -p 127.0.0.1:80:80 --name pandapanda
 script: 
