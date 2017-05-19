@@ -11,5 +11,9 @@ python:
  - "nightly"
 
 install: "pip install -r requirements.txt"
+ - docker build -t pandapanda .
+ - docker run -d -p -p 127.0.0.1:80:80 --name pandapanda
 
-script: python -m unittest test_randomfact.py
+script: 
+ - docker ps | grep -q pandapanda
+ - python -m unittest test_randomfact.py
