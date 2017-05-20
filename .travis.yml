@@ -14,7 +14,7 @@ services:
 - docker
 install: 
  - docker build -t pandapanda .
- - docker run -d -p 127.0.0.1:80:80 --name pandapanda pandapanda
+ - docker run -d -p 127.0.0.1:5000:5000 --name pandapanda pandapanda unittest test_randomfact.py
 before_script:
  - "pip install -r requirements.txt"
 script: 
