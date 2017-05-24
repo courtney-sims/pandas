@@ -1,8 +1,6 @@
 sudo: required
 language: python
 python:
- - "3.2"
- - "3.3"
  - "3.4"
  - "3.5"
  - "3.5-dev"
@@ -14,9 +12,5 @@ services:
 - docker
 install: 
  - docker build -t pandapanda .
- - docker run -d -p 127.0.0.1:5000:5000 --name pandapanda pandapanda unittest test_randomfact.py
-before_script:
- - "pip install -r requirements.txt"
 script: 
- - docker ps | grep -q pandapanda
- - python -m unittest test_randomfact.py
+- docker run --rm -p 127.0.0.1:5000:5000 --name pandapanda pandapanda -m unittest test_randomfact
