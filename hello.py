@@ -1,22 +1,24 @@
+"""Flask app router"""
 
 import flask
-app = flask.Flask(__name__)
+import randomfact
 
-@app.route('/')
+APP = flask.Flask(__name__)
+
+@APP.route('/')
 def hello_world():
-    return'Hello, World!'
+    """Basic root page"""
+    return 'Hello, World!'
 
-@app.route('/pandafacts')
+@APP.route('/pandafacts')
 def panda_facts():
-    import randomfact
+    """Display random facts about pandas"""
     return randomfact.randomfact("pandafacts.txt")
-  
-@app.route('/pandagifs')
-def panda_gifs():
-  # return flask.send_file('/Users/courtney.curtis/flaskthing/static/panda.gif')
-   return app.send_static_file('panda.gif') 
+
+@APP.route('/pandagif')
+def panda_gif():
+    """Display gif of a panda"""
+    return APP.send_static_file('panda.gif')
 
 if __name__ == '__main__':
-    app.run(debug=True,host='0.0.0.0')
-
-#just testing git commit
+    APP.run(debug=True, host='0.0.0.0')
