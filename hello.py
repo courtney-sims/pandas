@@ -1,4 +1,4 @@
-"""Flask app router"""
+"""Flask app router."""
 
 import flask
 import randomfact
@@ -7,17 +7,17 @@ APP = flask.Flask(__name__)
 
 @APP.route('/')
 def hello_world():
-    """Basic root page"""
+    """Basic root page."""
     return 'Hello, World!'
 
 @APP.route('/pandafacts')
 def panda_facts():
-    """Display random facts about pandas"""
-    return randomfact.randomfact("pandafacts.txt")
+    """Display random facts about pandas."""
+    return randomfact.randomfact("data/pandafacts.txt")
 
 @APP.route('/pandagif')
 def panda_gif():
-    """Display gif of a panda"""
+    """Display gif of a panda."""
     return APP.send_static_file('panda.gif')
 
 if __name__ == '__main__':
