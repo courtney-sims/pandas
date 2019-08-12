@@ -1,17 +1,32 @@
+"""
+This module provides unit tests for the randomfact module.
+"""
 import unittest
+
 from randomfact import paragraphs
 
 class RandomFactTestCase(unittest.TestCase):
-    #Tests for `randomfact.py`
-
+    """
+    This class tests the code in randomfact.py.
+    """
+    def setUp(self):
+        self.panda_facts_file = 'test_data/test_panda_facts.txt'
     def test_facts_exist(self):
-        #Are we getting any facts from the facts file?
-        self.assertIsNotNone(paragraphs('test_pandafacts.txt'), msg="I don't know if facts exist :(")
+        """
+        This method tests paragraphs().
+        It ensures a test file can be parsed to return information.
+        """
+        test_facts = paragraphs(self.panda_facts_file)
+        self.assertIsNotNone(test_facts, msg="I don't know if facts exist :(")
 
     def test_4_paragraphs(self):
-        #Is the facts file being properly split into facts by paragraph?
-        self.assertEqual(len(paragraphs('test_pandafacts.txt')),4, msg="I don't know if facts are counted :(")
+        """
+        This method tests paragraphs().
+        It ensures a test file can be split into the expected number of paragraphs.
+        """
+        expected_length = 4
+        actual_length = len(paragraphs(self.panda_facts_file))
+        self.assertEqual(actual_length, expected_length, msg="I don't know if facts are counted :(")
 
 if __name__ == '__main__':
     unittest.main()
-#commentfortruckstopdrivers
