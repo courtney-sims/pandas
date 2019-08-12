@@ -7,11 +7,9 @@ I'm looking back at this two years later and seeing what I've learned since then
 
 
 # Currently working on
-Linting python files (3 test files left!) and organizing the doc tree.
+I just added linting and some organization to the doc tree. Next up is improving the quality of the code.
 
 # For the future
-Improve code quality.
 Review CD.
 How to deal with secrets (i.e. terraform aws keys).
-
 Add more fun stuff about pandas to explore flask further!
