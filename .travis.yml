@@ -1,7 +1,6 @@
+sudo: required
 language: python
 python:
- - "3.2"
- - "3.3"
  - "3.4"
  - "3.5"
  - "3.5-dev"
@@ -10,8 +9,10 @@ python:
  - "3.7-dev"
  - "nightly"
 
-install: "pip install -r requirements.txt"
-
+services:
+- docker
+install: 
+ - docker build -t pandapanda .
 script: 
- - make lint
- - cd tests && python3 -m unittest test_randomfact.py
+- make lint
+- docker run --rm -p 127.0.0.1:5000:5000 --name pandapanda pandapanda -m unittest test_randomfact functional_tests
