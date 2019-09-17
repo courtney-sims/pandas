@@ -1,7 +1,7 @@
 # pandas
-This is the first thing I wrote with Python, unit tests, and CI!
+This is the first thing I wrote with Python, unit tests, or CI!
 
-It's very simple - just a Flask app that shows some fun stuff about Pandas.
+It's very simple - just a Flask app that shows some fun stuff about Pandas (the bear, not the library).
 
 I'm looking back at this two years later and seeing what I've learned since then (and making some updates based on the learnings :) ).
 
