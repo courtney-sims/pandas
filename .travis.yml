@@ -1,9 +1,15 @@
 language: python
 
-services:
-- docker
+python:
+    - "2.7"
+    - "3.4"
+    - "3.5"
+    - "3.6"
+    - "3.7"
 
-before_install: 
- - docker build -t pandapanda .
- - docker run --rm -p 127.0.0.1:5000:5000 --name pandapanda pandapanda -m unittest test_randomfact functional_tests
+install:
+    - pip install -r requirements.txt
+
+script:
+    - python -m unittest test_randomfact functional_tests
 
