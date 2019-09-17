@@ -11,3 +11,6 @@ class TestFlaskInBrowser(unittest.TestCase):
         browser = webdriver.Firefox()
         browser.get('http://localhost:5000')
         self.assertTrue('Flask' in browser.title)
+
+if __name__ == '__main__':
+    unittest.main()
