@@ -4,7 +4,7 @@ before_install:
     - mkdir /tmp/bin
     - wget -P /tmp/bin/ https://github.com/mozilla/geckodriver/releases/download/v0.24.0/geckodriver-v0.24.0-linux64.tar.gz
     - tar -xvzf /tmp/bin/geckodriver*
-    - chmod +x /tmp/bin/geckodriver
+    - chmod +x /tmp/bin/geckodriver*
     - export PATH=$PATH:/tmp/bin/
 
 python:
