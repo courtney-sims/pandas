@@ -10,7 +10,7 @@ class RandomFactTestCase(unittest.TestCase):
     This class tests the code in randomfact.py.
     """
     def setUp(self):
-        self.panda_facts_file = 'test_data/test_panda_facts.txt'
+        self.panda_facts_file = 'tests/test_data/test_panda_facts.txt'
     def test_facts_exist(self):
         """
         This method tests paragraphs().

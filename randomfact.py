@@ -8,6 +8,8 @@ def paragraphs(parsefile):
 
     facts = f.read()
 
+    f.close()
+
     return facts.split("\n\n")
 
 def randomfact(factfile):
