@@ -1,16 +1,17 @@
-sudo: required
 language: python
+
+before_install:
+    - mkdir /tmp/bin
+    - wget -P /tmp/bin/ https://github.com/mozilla/geckodriver/releases/download/v0.24.0/geckodriver-v0.24.0-linux64.tar.gz
+    - tar -xvzf /tmp/bin/geckodriver*
+    - chmod +x /tmp/bin/geckodriver*
+    - export PATH=$PATH:/tmp/bin/
+
 python:
- - "3.4"
- - "3.5"
- - "3.5-dev"
- - "3.6"
- - "3.6-dev"
- - "3.7-dev"
- - "nightly"
-services:
-- docker
-install: 
- - docker build -t pandapanda .
-script: 
-- docker run --rm -p 127.0.0.1:5000:5000 --name pandapanda pandapanda -m unittest test_randomfact
+    - "3.5"
+    - "3.6"
+    - "3.7"
+
+script:
+    - make lint
+    - make test
